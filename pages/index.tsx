@@ -1,7 +1,7 @@
 import React from "react";
 import {Badge, Col, Container, Row} from "react-bootstrap";
 import {concat, Timeline} from "../src/utils/timeline";
-import {AvailableLanguages, Contact, Educations, i18n, WorkExperiences} from "../src/data";
+import {AvailableLanguages, Contact, EducationOngoing, Educations, i18n, WorkExperiences} from "../src/data";
 import {Call, Email, LocationOn, Web} from "@material-ui/icons";
 
 interface AnimationState {
@@ -105,7 +105,7 @@ const Index: React.FunctionComponent = (props) => {
     </div>
     <Container>
       <Row className={"pt-5"}>
-        <Col xs={12} lg={9} className={"pr-lg-5"}>
+        <Col xs={12} lg={8} className={"pr-lg-5"}>
           <Row>
             <Col xs={12}>
               <h1 className={"section"}>Work Experiences</h1>
@@ -122,7 +122,7 @@ const Index: React.FunctionComponent = (props) => {
                       </Col>
                       <Col xs={12} md={6} className={"text-md-right"}>
                         <strong>{i18n(work.charge)}</strong><br/>
-                        <span>{toYearMonth(work.from)} ~ {work.to ? toYearMonth(work.to) : ""}</span>
+                        <span className={"text-secondary"}>{toYearMonth(work.from)} ~ {work.to ? toYearMonth(work.to) : ""}</span>
                       </Col>
                     </Row>
                     {
@@ -145,16 +145,35 @@ const Index: React.FunctionComponent = (props) => {
             </Col>
           </Row>
         </Col>
-        <Col xs={12} lg={3} className={"pl-lg-4"}>
+        <div className={"d-none d-lg-block"} style={{ width: 0 }}>
+          <div className={"border-left h-100"} style={{ width: "1px" }} />
+        </div>
+        <Col xs={12} lg={4} className={"pl-lg-4"}>
           <Row>
             <Col xs={12} className={"pt-5 pt-lg-0"}>
               <h1 className={"section"}>Contact</h1>
             </Col>
             <Col xs={12} className={"pt-2"}>
-              <Call className={"text-primary"}/>{"\u00A0"}{i18n(Contact.phone)}<br/>
-              <LocationOn className={"text-primary"}/>{"\u00A0"}{i18n(Contact.location)}<br/>
-              <Email className={"text-primary"}/>{"\u00A0"}{i18n(Contact.email)}<br/>
-              <Web className={"text-primary"}/>{"\u00A0"}{i18n(Contact.website)}<br/>
+              <table style={{ lineBreak: "anywhere" }}>
+                <tbody>
+                <tr>
+                  <td style={{ width: "2rem" }}><Call className={"text-primary"}/></td>
+                  <td>{i18n(Contact.phone)}</td>
+                </tr>
+                <tr>
+                  <td style={{ width: "2rem" }}><LocationOn className={"text-primary"}/></td>
+                  <td>{i18n(Contact.location)}</td>
+                </tr>
+                <tr>
+                  <td style={{ width: "2rem" }}><Email className={"text-primary"}/></td>
+                  <td>{i18n(Contact.email)}</td>
+                </tr>
+                <tr>
+                  <td style={{ width: "2rem" }}><Web className={"text-primary"}/></td>
+                  <td>{i18n(Contact.website)}</td>
+                </tr>
+                </tbody>
+              </table>
             </Col>
           </Row>
           <Row>
@@ -162,12 +181,19 @@ const Index: React.FunctionComponent = (props) => {
               <h1 className={"section"}>Educations</h1>
             </Col>
             <Col xs={12} className={"pt-2"}>
-              {
-                Educations.map((edu, i) => <span key={i}>
-                  <strong>{i18n(edu.name)}</strong> {i18n(edu.department)} {i18n(edu.degree)}<br/>
-                  <span>{toYearMonth(edu.from)} ~ {edu.to ? toYearMonth(edu.to) : ""}</span><br/>
-                </span>)
-              }
+              <table className={"w-100"}>
+                <tbody>
+                {
+                  Educations.map((edu, i) => <tr key={i}>
+                    <td className={"align-top"}><strong>{i18n(edu.name)}</strong></td>
+                    <td className={"align-top text-right"}>
+                      <span>{i18n(edu.department)} {i18n(edu.degree)}</span><br/>
+                      <span className={"text-secondary"}>{toYearMonth(edu.from)} ~ {edu.to ? toYearMonth(edu.to) : i18n(EducationOngoing)}</span><br/>
+                    </td>
+                  </tr>)
+                }
+                </tbody>
+              </table>
             </Col>
           </Row>
           <Row>
@@ -175,16 +201,33 @@ const Index: React.FunctionComponent = (props) => {
               <h1 className={"section"}>Languages</h1>
             </Col>
             <Col xs={12} className={"pt-2"}>
-              {
-                AvailableLanguages.map((lang, i) => <span key={i}>
-                  {i18n(lang)}<br/>
-                </span>)
-              }
+              <table className={"w-100"}>
+                <tbody>
+                {
+                  AvailableLanguages.map((lang, i) => <tr key={i}>
+                    <td>{lang.emoji}</td>
+                    <td><strong>{i18n(lang.name)}</strong></td>
+                    <td>{i18n(lang.level)}</td>
+                  </tr>)
+                }
+                </tbody>
+              </table>
+
             </Col>
           </Row>
         </Col>
       </Row>
     </Container>
+    <Container style={{ height: "7.5rem"}} />
+    <div className={"bg-light"}>
+      <Container>
+        <Row>
+          <Col className={"text-center text-white"} style={{ paddingTop: "5rem", paddingBottom: "5rem" }}>
+            Yoonha Hwang © 2021 All Rights Reserved
+          </Col>
+        </Row>
+      </Container>
+    </div>
   </div>
 };
 

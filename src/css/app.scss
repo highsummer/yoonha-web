@@ -22,3 +22,7 @@
 
   border-left: 0.1em $black solid !important;
 }
+
+* {
+  word-break: keep-all;
+}
