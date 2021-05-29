@@ -28,10 +28,10 @@ const Index: React.FunctionComponent = (props) => {
     },
     {
       get: (timing: number) => ({ ...ZeroAnimationState, firstName: "Yoonha".slice(0, timing + 1) }),
-      span: "Yoonha".length,
+      span: "Yoonha".length - 1,
     },
     {
-      get: (timing: number) => ({ ...ZeroAnimationState, firstName: "Yoonha", lastName: "Hwang".slice(0, timing + 1), cursorOn: "last" }),
+      get: (timing: number) => ({ ...ZeroAnimationState, firstName: "Yoonha", lastName: "Hwang".slice(0, timing), cursorOn: "last" }),
       span: "Hwang".length,
     },
     {
@@ -56,12 +56,36 @@ const Index: React.FunctionComponent = (props) => {
   return <div>
     <div className={"bg-light"}>
       <Container>
-        <Row>
-          <Col xs={5} className={"position-relative"} style={{ height: "36rem" }}>
-            <img alt={"portrait-yoonha"} src={"/portrait.png"} className={"position-absolute"}  style={{ right: "3rem", bottom: 0, height: "31.25rem" }} />
+        <Row className={"d-md-none"}>
+          <Col xs={6} className={"position-relative"} style={{ height: "28rem" }}>
+            <img alt={"portrait-yoonha-desktop"} src={"/portrait.png"} className={"position-absolute"}  style={{ right: "3rem", bottom: 0, height: "25rem" }} />
           </Col>
-          <Col xs={7} className={"position-relative"}>
-            <div className={"position-absolute"} style={{ top: "10rem" }}>
+          <Col xs={6} className={"position-relative"} style={{ height: "28rem" }}>
+            <div className={"position-absolute"} style={{ width: "14rem", left: "-2.375rem", top: "8.25rem" }}>
+              <div className={"display-4 text-name text-primary"} style={{ lineHeight: "0.9em" }}>
+                {(animationState.firstName + (animationState.cursorOn === "first" ? cursor : "")) || "\u00A0"}
+              </div>
+              <div className={"display-4 text-name"} style={{ lineHeight: "0.9em" }}>
+                {(animationState.lastName + (animationState.cursorOn === "last" ? cursor : "")) || "\u00A0"}
+              </div>
+            </div>
+            <div className={"position-absolute"} style={{ width: "14.125rem", left: "-2.5rem", top: "14rem" }}>
+              <div className={"ml-1 mt-4 text-name"} style={{ fontSize: "1rem" }}>
+                from infrastructure <br/>
+                to frontend <br/>
+                an enthusiastic <br/>
+                data engineer.
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <Row className={"d-none d-md-flex"}>
+          <Col xs={6} className={"position-relative"} style={{ height: "36rem" }}>
+            <img alt={"portrait-yoonha-desktop"} src={"/portrait.png"} className={"position-absolute"}  style={{ right: "6rem", bottom: 0, height: "31.25rem" }} />
+          </Col>
+          <Col xs={6} className={"position-relative"}>
+            <div style={{ height: "36rem" }}/>
+            <div className={"position-absolute"} style={{ left: "-3rem", top: "10rem" }}>
               <div className={"display-1 text-name text-primary"} style={{ lineHeight: "0.9em" }}>
                 {(animationState.firstName + (animationState.cursorOn === "first" ? cursor : "")) || "\u00A0"}
               </div>
@@ -71,7 +95,8 @@ const Index: React.FunctionComponent = (props) => {
               <div className={"ml-1 mt-4 text-name"} style={{ fontSize: "1.5rem" }}>
                 from infrastructure <br/>
                 to frontend <br/>
-                an enthusiastic data engineer.
+                an enthusiastic <br className={"d-lg-none"}/>
+                data engineer.
               </div>
             </div>
           </Col>
@@ -80,7 +105,7 @@ const Index: React.FunctionComponent = (props) => {
     </div>
     <Container>
       <Row className={"pt-5"}>
-        <Col xs={9} className={"pr-5"}>
+        <Col xs={12} lg={9} className={"pr-lg-5"}>
           <Row>
             <Col xs={12}>
               <h1 className={"section"}>Work Experiences</h1>
@@ -90,38 +115,39 @@ const Index: React.FunctionComponent = (props) => {
                 WorkExperiences
                   .map((work, i) => <div key={i}>
                     <Row className={"pt-3"}>
-                      <Col xs={6}>
+                      <Col xs={12} md={6}>
                         <h2>
                           <span>{i18n(work.company)}</span>
                         </h2>
                       </Col>
-                      <Col xs={6} className={"text-right"}>
+                      <Col xs={12} md={6} className={"text-md-right"}>
                         <strong>{i18n(work.charge)}</strong><br/>
                         <span>{toYearMonth(work.from)} ~ {work.to ? toYearMonth(work.to) : ""}</span>
                       </Col>
                     </Row>
-                    <Row>
-                      {
-                        work.contents.map((sub, i) =>
-                          <>
-                            <Col key={`subtitle-${i}`} xs={12} md={4} className={"mt-4"}>
-                              <strong>{i18n(sub.subtitle)}</strong><br/>
-                              {sub.stacks.map((stack, i) => <Badge key={i} variant={"secondary"} className={"mr-1"}>{i18n(stack)}</Badge>)}<br/>
-                            </Col>
-                            <Col key={`text-${i}`} xs={12} md={8} className={"mt-4"}>
-                              {i18n(sub.text)}<br/><br/>
-                            </Col>
-                          </>)
-                      }
-                    </Row>
+                    {
+                      work.contents.map((sub, i) =>
+                        <Row key={i}>
+                          <Col xs={12} className={"pt-3 d-md-none"}>
+                            <div className={"border-top"}/>
+                          </Col>
+                          <Col xs={12} md={4} className={"pt-3 pt-md-5"}>
+                            <strong>{i18n(sub.subtitle)}</strong><br/>
+                            {sub.stacks.map((stack, i) => <Badge key={i} variant={"secondary"} className={"mr-1"}>{i18n(stack)}</Badge>)}<br/>
+                          </Col>
+                          <Col xs={12} md={8} className={"pt-3 pt-md-5"}>
+                            {i18n(sub.text)}<br/>
+                          </Col>
+                        </Row>)
+                    }
                   </div>)
               }
             </Col>
           </Row>
         </Col>
-        <Col xs={3} className={"pl-4 border-left"}>
+        <Col xs={12} lg={3} className={"pl-lg-4"}>
           <Row>
-            <Col xs={12}>
+            <Col xs={12} className={"pt-5 pt-lg-0"}>
               <h1 className={"section"}>Contact</h1>
             </Col>
             <Col xs={12} className={"pt-2"}>
@@ -145,7 +171,7 @@ const Index: React.FunctionComponent = (props) => {
             </Col>
           </Row>
           <Row>
-            <Col className={"pt-5"}>
+            <Col xs={12} className={"pt-5"}>
               <h1 className={"section"}>Languages</h1>
             </Col>
             <Col xs={12} className={"pt-2"}>
