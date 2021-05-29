@@ -114,6 +114,12 @@ const Index: React.FunctionComponent = (props) => {
               {
                 WorkExperiences
                   .map((work, i) => <div key={i}>
+                    {
+                      i === 0 ? <></> : <>
+                        <div className={"pt-5"} />
+                        <div className={"d-none d-md-block border-top pt-3"} />
+                      </>
+                    }
                     <Row className={"pt-3"}>
                       <Col xs={12} md={6}>
                         <h2>

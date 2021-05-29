@@ -222,4 +222,149 @@ export const WorkExperiences: WorkExperience[] = [
       },
     ],
   },
+  {
+    company: {
+      "ko-KR": "보이저엑스",
+      "en-US": "VoyagerX",
+    },
+    charge: forAll("Internship"),
+    from: new Date("2018-02-01"),
+    to: new Date("2021-08-01"),
+    contents: [
+      {
+        subtitle: {
+          "ko-KR": "딥러닝 모델 모바일 최적화",
+          "en-US": "Deep Learning Model Mobile Optimization",
+        },
+        stacks: [
+          forAll("Python"),
+          forAll("Keras"),
+          forAll("Tensorflow"),
+        ],
+        text: {
+          "ko-KR": "Dr. Blur 개발 당시 Keras, Tensorflow를 기반으로 pruning, distillation 등을 이용하여 모델을 고속화 및 압축하였습니다. 모델 패러미터 수는 30% 수준으로 줄이고 품질 저하는 5% 이내로 유지하는 결과를 얻었습니다.",
+          "en-US": "Optimized deep learning models using pruning and distillation on Keras and Tensorflow, which resulted in reduction on the number of model parameters to 30% keeping quality degradation lower than 5%.",
+        },
+      },
+      {
+        subtitle: {
+          "ko-KR": "모바일 스캐너 vFlat 인공 데이터셋 생성",
+          "en-US": "Artificial Dataset Generation",
+        },
+        stacks: [
+          forAll("Python"),
+          forAll("Blender"),
+        ],
+        text: {
+          "ko-KR": "Blender 외부 python 스크립팅 기능을 이용해 자동으로 다각도에서 다양한 환경의 책 이미지를 자동으로 생성했습니다. 기존에 실사 촬영 후 손으로 라벨링하여 모으던 데이터를 대체했습니다.",
+          "en-US": "Augmented photo based dataset with a variety of graphically rendered pictures using Blender's external Python scripting functionality.",
+        },
+      },
+    ],
+  },
+  {
+    company: {
+      "ko-KR": "퍼즐데이터",
+      "en-US": "PuzzleData",
+    },
+    charge: forAll("Internship"),
+    from: new Date("2017-09-01"),
+    to: new Date("2018-01-01"),
+    contents: [
+      {
+        subtitle: {
+          "ko-KR": "공식 웹페이지 개발",
+          "en-US": "Official Webpage Development",
+        },
+        stacks: [
+          forAll("Python"),
+          forAll("Django"),
+          forAll("Bootstrap"),
+        ],
+        text: {
+          "ko-KR": "Django를 이용하여 서버 백엔드 부터 웹 페이지 프론트엔드까지 직접 개발했습니다.",
+          "en-US": "Developed an official webpage from frontend to server backend with Django.",
+        },
+      },
+      {
+        subtitle: {
+          "ko-KR": "프로세스마이닝 전문 툴 ProDiscovery 2.0 개발 참여",
+          "en-US": "ProDiscovery 2.0 Development Participation",
+        },
+        stacks: [
+          forAll("Python"),
+          forAll("Blender"),
+        ],
+        text: {
+          "ko-KR": "On-premise Java Spark 환경에서 프로세스마이닝 알고리즘 논문을 구현했습니다.",
+          "en-US": "Implemented an algorithm for process mining from a paper on an on-premise Java and Spark environment.",
+        },
+      },
+    ],
+  },
+  {
+    company: {
+      "ko-KR": "긱블",
+      "en-US": "Geekble",
+    },
+    charge: forAll("Director"),
+    from: new Date("2017-01-01"),
+    to: new Date("2017-08-01"),
+    contents: [
+      {
+        subtitle: {
+          "ko-KR": "웹 서버, 메일 서버 및 소프트웨어 관리",
+          "en-US": "Web/Mail Server and Software Management",
+        },
+        stacks: [
+          forAll("Linux"),
+          forAll("Wordpress"),
+          forAll("Bootstrap"),
+        ],
+        text: {
+          "ko-KR": "사내 전체의 서버와 소프트웨어를 총괄하여 관리했습니다.",
+          "en-US": "Managed servers and software throughout the company.",
+        },
+      },
+      {
+        subtitle: {
+          "ko-KR": "영상 기획, 촬영, 편집 및 임베디드 시스템 작품 제작",
+          "en-US": "Directing, Filming, Editing and Embedded System Artworks Fabrication",
+        },
+        stacks: [
+          forAll("Embedded"),
+          forAll("After Effect"),
+        ],
+        text: {
+          "ko-KR": "Dragonboard, Raspberry Pi와 같은 임베디드 시스템과 시리얼 통신, 서보 모터 드라이브 등의 부속 시스템을 결합하여 작품을 제작했습니다.",
+          "en-US": "Fabricated artworks using embedded systems like Dragonboard and Raspberry Pi, serial communication and servo motor drivers.",
+        },
+      },
+    ],
+  },
+  {
+    company: {
+      "ko-KR": "나노스튜디오",
+      "en-US": "Chief Developer",
+    },
+    charge: forAll("Director"),
+    from: new Date("2015-01-01"),
+    to: new Date("2017-01-01"),
+    contents: [
+      {
+        subtitle: {
+          "ko-KR": "팀 내 유일 개발자로 시스템 설계부터 콘텐츠 개발까지 전체 개발 주도",
+          "en-US": "Leading from System Design to Contents Development as the only Developer in the team",
+        },
+        stacks: [
+          forAll("GM:S"),
+          forAll("Steam API"),
+        ],
+        text: {
+          "ko-KR": "GameMaker: Studio를 이용해 게임 전체를 개발했습니다. Nano Script 라는 자체 언어를 설계하여 비프로그래머도 개발에 참여할 수 있도록 했습니다. Steam 전용으로 게임을 빌드하고 출시하는 과정을 담당했습니다.",
+          "en-US": "Developed a whole game with GameMaker: Studio. Designed a script language so that non-programmers can contribute development processes. Built the game for Steam platform.",
+        },
+      },
+    ],
+  },
 ];
