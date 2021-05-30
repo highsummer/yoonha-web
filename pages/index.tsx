@@ -6,8 +6,8 @@ import {
   Contact,
   EducationOngoing,
   Educations,
-  i18n, Language,
-  LanguageNames, Languages,
+  i18n, language, Language,
+  LanguageNames, Languages, TitleAvailableLanguage, TitleContact, TitleEducations, TitleKeywords, TitleWorkExperiences,
   WorkExperiences
 } from "../src/data";
 import {Call, Email, LocationOn, Web} from "@material-ui/icons";
@@ -62,12 +62,6 @@ const Index: React.FunctionComponent = (props) => {
 
   const toYearMonth = (d: Date): string => `${d.getUTCFullYear()}-${(d.getUTCMonth() + 1).toString().padStart(2, "0")}`;
 
-  const spawnI18nPage = async (lang: Language) => {
-    const router = useRouter();
-    await router.push( { pathname: "/", query: { lang: lang } });
-    router.reload();
-  };
-
   return <div>
     <div className={"bg-light"}>
       <Container>
@@ -119,18 +113,22 @@ const Index: React.FunctionComponent = (props) => {
       </Container>
     </div>
     <Container>
-      <Row className={"pt-5"}>
-        <Col className={"text-right"}>
-          Not a {i18n(LanguageNames)["en-US"]} speaker? Check other language options!
-          <a href={`#?lang=${Languages[0]}`}>🇰🇷</a>
-          <a href={`#?lang=${Languages[1]}`}>🇺🇸</a>
+      <Row className={"pt-3"}>
+        <Col className={"text-right text-secondary"}>
+          Languages |
+          {
+            Languages.filter(lang => lang !== "emoji").map(lang => <>
+              <span key={`nbsp-${lang}`}>{"\u00A0"}</span>
+              <a key={`a-${lang}`} href={`?lang=${lang}`}>{LanguageNames[lang]["emoji"]}</a>
+            </>)
+          }
         </Col>
       </Row>
       <Row className={"pt-5"}>
         <Col xs={12} lg={8} className={"pr-lg-5"}>
           <Row>
             <Col xs={12}>
-              <h1 className={"section"}>Work Experiences</h1>
+              <h1 className={"section"}>{i18n(TitleWorkExperiences)}</h1>
             </Col>
             <Col>
               {
@@ -179,7 +177,7 @@ const Index: React.FunctionComponent = (props) => {
         <Col xs={12} lg={4} className={"pl-lg-4"}>
           <Row>
             <Col xs={12} className={"pt-5 pt-lg-0"}>
-              <h1 className={"section"}>Contact</h1>
+              <h1 className={"section"}>{i18n(TitleContact)}</h1>
             </Col>
             <Col xs={12} className={"pt-2"}>
               <table style={{ lineBreak: "anywhere" }}>
@@ -206,7 +204,7 @@ const Index: React.FunctionComponent = (props) => {
           </Row>
           <Row>
             <Col xs={12} className={"pt-5"}>
-              <h1 className={"section"}>Educations</h1>
+              <h1 className={"section"}>{i18n(TitleEducations)}</h1>
             </Col>
             <Col xs={12} className={"pt-2"}>
               <table className={"w-100"}>
@@ -226,7 +224,7 @@ const Index: React.FunctionComponent = (props) => {
           </Row>
           <Row>
             <Col xs={12} className={"pt-5"}>
-              <h1 className={"section"}>Languages</h1>
+              <h1 className={"section"}>{i18n(TitleAvailableLanguage)}</h1>
             </Col>
             <Col xs={12} className={"pt-2"}>
               <table className={"w-100"}>
