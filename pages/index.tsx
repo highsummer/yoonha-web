@@ -1,8 +1,17 @@
 import React from "react";
 import {Badge, Col, Container, Row} from "react-bootstrap";
 import {concat, Timeline} from "../src/utils/timeline";
-import {AvailableLanguages, Contact, EducationOngoing, Educations, i18n, WorkExperiences} from "../src/data";
+import {
+  AvailableLanguages,
+  Contact,
+  EducationOngoing,
+  Educations,
+  i18n, Language,
+  LanguageNames, Languages,
+  WorkExperiences
+} from "../src/data";
 import {Call, Email, LocationOn, Web} from "@material-ui/icons";
+import {useRouter} from "next/router";
 
 interface AnimationState {
   firstName: string,
@@ -52,6 +61,12 @@ const Index: React.FunctionComponent = (props) => {
   const cursor = animationState.showCursor ? "█" : "";
 
   const toYearMonth = (d: Date): string => `${d.getUTCFullYear()}-${(d.getUTCMonth() + 1).toString().padStart(2, "0")}`;
+
+  const spawnI18nPage = async (lang: Language) => {
+    const router = useRouter();
+    await router.push( { pathname: "/", query: { lang: lang } });
+    router.reload();
+  };
 
   return <div>
     <div className={"bg-light"}>
@@ -104,6 +119,13 @@ const Index: React.FunctionComponent = (props) => {
       </Container>
     </div>
     <Container>
+      <Row className={"pt-5"}>
+        <Col className={"text-right"}>
+          Not a {i18n(LanguageNames)["en-US"]} speaker? Check other language options!
+          <a href={`#?lang=${Languages[0]}`}>🇰🇷</a>
+          <a href={`#?lang=${Languages[1]}`}>🇺🇸</a>
+        </Col>
+      </Row>
       <Row className={"pt-5"}>
         <Col xs={12} lg={8} className={"pr-lg-5"}>
           <Row>

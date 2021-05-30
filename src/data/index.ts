@@ -1,12 +1,13 @@
 import {useRouter} from "next/router";
 
-const Languages: Language[] = ["ko-KR", "en-US"];
-const GlobalFallbackLanguage = "en-US";
-type Language = "ko-KR" | "en-US";
+export const Languages: Language[] = ["ko-KR", "en-US"];
+export const GlobalFallbackLanguage = "en-US";
+export type Language = "ko-KR" | "en-US";
 
-type TextFragment = { [L in Language]: string }
+export type I18n<T> = { [L in Language]: T };
+export type TextFragment = I18n<string>;
 
-export function i18n(frag: TextFragment) {
+export function i18n<T>(frag: I18n<T>): T {
   const router = useRouter();
   const langQuery = router.query["lang"];
   const lang: Language = (Array.isArray(langQuery) ? langQuery[0] : langQuery) as Language ?? "ko-KR";
@@ -16,6 +17,21 @@ export function i18n(frag: TextFragment) {
 function forAll(x: string): TextFragment {
   return Object.fromEntries(Languages.map(l => [l, x] as [Language, string])) as TextFragment
 }
+
+export const Name = "Yoonha Hwang";
+export const Catchphrase = "From infrastructure to frontend, an enthusiastic data engineer.";
+export const Host = "https://yoonha.dev";
+
+export const LanguageNames: I18n<TextFragment> = {
+  "ko-KR": {
+    "ko-KR": "한국어",
+    "en-US": "Korean",
+  },
+  "en-US": {
+    "ko-KR": "영어",
+    "en-US": "English",
+  },
+};
 
 export type ContactColumns = "phone" | "location" | "email" | "website";
 export const Contact: { [K in ContactColumns]: TextFragment } = {
