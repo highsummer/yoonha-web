@@ -158,6 +158,52 @@ export interface WorkExperience {
 export const WorkExperiences: WorkExperience[] = [
   {
     company: {
+      "ko-KR": "페이스",
+      "en-US": "PACE",
+      "emoji": "💓"
+    },
+    charge: forAll("Lead, Dev"),
+    from: new Date("2021-06-01"),
+    contents: [
+      {
+        subtitle: {
+          "ko-KR": "개발팀 교육 및 매니징",
+          "en-US": "Managed and taught Dev team",
+          "emoji": "👭📖🚦",
+        },
+        stacks: [],
+        text: {
+          "ko-KR": "개발팀을 바닥부터 꾸려서 구성원들을 교육하고 팀을 매니징하였습니다.",
+          "en-US": "Built Dev team from scratch, while teaching and managing them.",
+          "emoji": "",
+        },
+      },
+      {
+        subtitle: {
+          "ko-KR": "MSA SaaS 개발",
+          "en-US": "MSA SaaS from scratch",
+          "emoji": "🌊🖥🏗",
+        },
+        stacks: [
+          forAll("AWS"),
+          forAll("Kubernetes"),
+          forAll("Docker"),
+          forAll("NodeJS"),
+          forAll("Typescript"),
+          forAll("ExpressJS"),
+          forAll("React"),
+          forAll("Bootstrap"),
+        ],
+        text: {
+          "ko-KR": "고성능 컴퓨팅 자원을 필요로 하는 on-demand MSA SaaS를 인프라부터 프론트엔드까지 설계하고 개발하였습니다.",
+          "en-US": "Worked from infrastructure to frontend, designing and developing an on-demand MSA SaaS which requires high-performance computing.",
+          "emoji": "",
+        },
+      }
+    ],
+  },
+  {
+    company: {
       "ko-KR": "베이글코드",
       "en-US": "Bagelcode",
       "emoji": "🥯💻",
@@ -298,7 +344,7 @@ export const WorkExperiences: WorkExperience[] = [
     },
     charge: forAll("Internship", "⏲️"),
     from: new Date("2018-02-01"),
-    to: new Date("2021-08-01"),
+    to: new Date("2018-08-01"),
     contents: [
       {
         subtitle: {
