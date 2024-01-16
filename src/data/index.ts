@@ -1,4 +1,4 @@
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 
 export const Languages: Language[] = ["ko-KR", "en-US", "emoji"];
 export const GlobalFallbackLanguage: Language = "en-US";
@@ -136,24 +136,6 @@ export const Educations: Education[] = [
     from: new Date("2014-03-01"),
     to: new Date("2023-02-01"),
   },
-  {
-    name: {
-      "ko-KR": "포항공과대학교",
-      "en-US": "POSTECH",
-      "emoji": "🔥🧪🔭🏫",
-    },
-    department: {
-      "ko-KR": "컴퓨터공학과",
-      "en-US": "Computer Science and Engineering",
-      "emoji": "🖥️",
-    },
-    degree: {
-      "ko-KR": "석사 과정",
-      "en-US": "Master",
-      "emoji": "👩‍🎓",
-    },
-    from: new Date("2023-02-01"),
-  }
 ];
 
 export const EducationOngoing: TextFragment = {
@@ -177,12 +159,60 @@ export interface WorkExperience {
 export const WorkExperiences: WorkExperience[] = [
   {
     company: {
+      "ko-KR": "티오리",
+      "en-US": "Theori",
+      "emoji": "🔒",
+    },
+    charge: forAll("Full-stack Developer, ChainLight"),
+    from: new Date("2023-02-01"),
+    contents: [
+      {
+        subtitle: {
+          "ko-KR": "ChainLight 웹사이트 개발",
+          "en-US": "ChainLight Website Development",
+          "emoji": "🌐🖥️🏗",
+        },
+        stacks: [
+          forAll("AWS"),
+          forAll("React"),
+          forAll("Typescript"),
+          forAll("NextJS"),
+        ],
+        text: {
+          "ko-KR": "ChainLight 웹사이트를 개발했습니다. Figma를 이용해 협업하고 NextJS를 이용해 SSR을 구현했습니다.",
+          "en-US": "Developed ChainLight website. Worked with Figma and implemented SSR with NextJS.",
+          "emoji": "",
+        },
+      },
+      {
+        subtitle: {
+          "ko-KR": "DART 개발",
+          "en-US": "DART Development",
+          "emoji": "📊👩‍💼🏗",
+        },
+        stacks: [
+          forAll("AWS"),
+          forAll("React"),
+          forAll("Typescript"),
+          forAll("NextJS"),
+        ],
+        text: {
+          "ko-KR": "DART를 설계하고 개발하였습니다. Figma를 이용해 협업하고 직접 디자인 토큰을 만들어서 사용했습니다.",
+          "en-US": "Designed and developed DART. Worked with Figma and designed tokens by myself.",
+          "emoji": "",
+        },
+      }
+    ],
+  },
+  {
+    company: {
       "ko-KR": "페이스",
       "en-US": "PACE",
       "emoji": "💓"
     },
     charge: forAll("Lead, Dev"),
     from: new Date("2021-06-01"),
+    to: new Date("2023-02-01"),
     contents: [
       {
         subtitle: {
