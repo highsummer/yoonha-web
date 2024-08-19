@@ -81,9 +81,9 @@ const Index: React.FunctionComponent = (props) => {
             <div className={"position-absolute"} style={{ width: "14.125rem", left: "-2.5rem", top: "14rem" }}>
               <div className={"ml-1 mt-4 text-name"} style={{ fontSize: "1rem" }}>
                 from infrastructure <br/>
-                to frontend <br/>
+                to frontend, <br/>
                 an enthusiastic <br/>
-                data engineer.
+                all-rounder.
               </div>
             </div>
           </Col>
@@ -105,7 +105,7 @@ const Index: React.FunctionComponent = (props) => {
                 from infrastructure <br/>
                 to frontend <br/>
                 an enthusiastic <br className={"d-lg-none"}/>
-                data engineer.
+                all-rounder.
               </div>
             </div>
           </Col>
