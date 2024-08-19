@@ -57,13 +57,8 @@ export interface Keyword {
 }
 
 export const TitleContact: TextFragment = forAll("Contact", "📞");
-export type ContactColumns = "phone" | "location" | "email" | "website";
+export type ContactColumns = "location" | "email" | "website";
 export const Contact: { [K in ContactColumns]: TextFragment } = {
-  phone: {
-    "ko-KR": "010-8967-0996",
-    "en-US": "+82-10-8967-0996",
-    "emoji": "➕8️⃣2️⃣➖🔟➖️️8️⃣☯️7️⃣➖0️⃣9️⃣☯️",
-  },
   location: {
     "ko-KR": "대한민국 경상북도 포항시",
     "en-US": "Pohang, Gyeongsangbuk-do, Republic of Korea",
@@ -163,13 +158,14 @@ export const WorkExperiences: WorkExperience[] = [
       "en-US": "Theori",
       "emoji": "🔒",
     },
-    charge: forAll("Full-stack Developer, ChainLight"),
+    charge: forAll("Senior Software Engineer, ChainLight"),
     from: new Date("2023-02-01"),
+    to: new Date("2024-06-30"),
     contents: [
       {
         subtitle: {
           "ko-KR": "ChainLight 웹사이트 개발",
-          "en-US": "ChainLight Website Development",
+          "en-US": "Developed ChainLight Website",
           "emoji": "🌐🖥️🏗",
         },
         stacks: [
@@ -187,7 +183,7 @@ export const WorkExperiences: WorkExperience[] = [
       {
         subtitle: {
           "ko-KR": "DART 개발",
-          "en-US": "DART Development",
+          "en-US": "DART",
           "emoji": "📊👩‍💼🏗",
         },
         stacks: [
@@ -197,8 +193,24 @@ export const WorkExperiences: WorkExperience[] = [
           forAll("NextJS"),
         ],
         text: {
-          "ko-KR": "DART를 설계하고 개발하였습니다. Figma를 이용해 협업하고 직접 디자인 토큰을 만들어서 사용했습니다.",
-          "en-US": "Designed and developed DART. Worked with Figma and designed tokens by myself.",
+          "ko-KR": "Saas 프로덕트인 DART를 프론트엔드부터 인프라까지 모두 설계하고 개발하였습니다. Figma를 이용해 협업하고 직접 디자인 토큰을 만들어서 사용했습니다.",
+          "en-US": "Designed and developed DART from frontend to infrastructure. Worked with Figma and created design tokens for the project.",
+          "emoji": "",
+        },
+      },
+      {
+        subtitle: {
+          "ko-KR": "RBAC 시스템 개발",
+          "en-US": "Developed an RBAC System",
+          "emoji": "📊👩‍💼🏗",
+        },
+        stacks: [
+          forAll("TypeScript"),
+          forAll("PostgreSQL"),
+        ],
+        text: {
+          "ko-KR": "DART에 필요한 RBAC 시스템을 직접 설계하고 개발하였습니다. 세밀한 권한 컨트롤이 가능한 RBAC를 위해 필요한 문법을 정의하고 파서를 직접 만드는 한편, 백엔드에서 유연하게 작동할 수 있도록 캐싱레이어를 설계했습니다.", 
+          "en-US": "Designed and developed an RBAC system for DART. Defined grammar for detailed permission control and built a parser. Also, designed a caching layer for flexible backend operations.",
           "emoji": "",
         },
       }
@@ -246,6 +258,24 @@ export const WorkExperiences: WorkExperience[] = [
         text: {
           "ko-KR": "고성능 컴퓨팅 자원을 필요로 하는 on-demand MSA SaaS를 인프라부터 프론트엔드까지 설계하고 개발하였습니다.",
           "en-US": "Worked from infrastructure to frontend, designing and developing an on-demand MSA SaaS which requires high-performance computing.",
+          "emoji": "",
+        },
+      },
+      {
+        subtitle: {
+          "ko-KR": "Web Visualizer 개발",
+          "en-US": "Developed a Web Visualizer",
+          "emoji": "🌊🖥🏗",
+        },
+        stacks: [
+          forAll("WebGL"),
+          forAll("WASM"),
+          forAll("Rust"),
+          forAll("Typescript"),
+        ],
+        text: {
+          "ko-KR": "웹 환경에서 복잡한 3d 구조를 조망할 수 있는 WebGL 기반 프레임워크를 만들고 엔드유저에게 serving 했습니다.",
+          "en-US": "Built a WebGL-based framework to visualize complex 3d structures in web environment and served it to end-users.",
           "emoji": "",
         },
       }
