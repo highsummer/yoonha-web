@@ -1,17 +1,17 @@
+import { Email, LocationOn, Web } from "@material-ui/icons";
 import React from "react";
-import {Badge, Col, Container, Row} from "react-bootstrap";
-import {concat, Timeline} from "../src/utils/timeline";
+import { Badge, Col, Container, Row } from "react-bootstrap";
 import {
   AvailableLanguages,
   Contact,
   EducationOngoing,
   Educations,
-  i18n, language, Language,
-  LanguageNames, Languages, TitleAvailableLanguage, TitleContact, TitleEducations, TitleKeywords, TitleWorkExperiences,
-  WorkExperiences
+  LanguageNames, Languages, TitleAvailableLanguage, TitleContact, TitleEducations,
+  TitleWorkExperiences,
+  WorkExperiences,
+  i18n
 } from "../src/data";
-import {Call, Email, LocationOn, Web} from "@material-ui/icons";
-import {useRouter} from "next/router";
+import { concat } from "../src/utils/timeline";
 
 interface AnimationState {
   firstName: string,
@@ -182,10 +182,6 @@ const Index: React.FunctionComponent = (props) => {
             <Col xs={12} className={"pt-2"}>
               <table style={{ lineBreak: "anywhere" }}>
                 <tbody>
-                <tr>
-                  <td style={{ width: "2rem" }}><Call className={"text-primary"}/></td>
-                  <td>{i18n(Contact.phone)}</td>
-                </tr>
                 <tr>
                   <td style={{ width: "2rem" }}><LocationOn className={"text-primary"}/></td>
                   <td>{i18n(Contact.location)}</td>
