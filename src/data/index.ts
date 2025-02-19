@@ -131,6 +131,24 @@ export const Educations: Education[] = [
     from: new Date("2014-03-01"),
     to: new Date("2023-02-01"),
   },
+  {
+    name: {
+      "ko-KR": "포항공과대학교",
+      "en-US": "POSTECH",
+      "emoji": "🔥🧪🔭🏫",
+    },
+    department: {
+      "ko-KR": "컴퓨터공학과",
+      "en-US": "Computer Science and Engineering",
+      "emoji": "🖥️",
+    },
+    degree: {
+      "ko-KR": "석사",
+      "en-US": "Master",
+      "emoji": "👩‍🎓",
+    },
+    from: new Date("2025-02-01"),
+  }
 ];
 
 export const EducationOngoing: TextFragment = {
