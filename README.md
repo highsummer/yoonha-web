@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# Yoonha Hwang - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website featuring a nostalgic **Windows 95** aesthetic. Built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Retro Design**: Authentic Windows 95 look and feel with custom fonts and UI components.
+-   **Responsive Layout**: Optimized for both desktop and mobile devices.
+-   **Interactive Elements**: Draggable windows, minimize/maximize functionality, and start menu interactions.
+-   **Static Deployment**: Automatically deployed to AWS S3 via GitHub Actions.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   **Framework**: [React](https://react.dev/)
+-   **Language**: [TypeScript](https://www.typescriptlang.org/)
+-   **Build Tool**: [Vite](https://vitejs.dev/)
+-   **Styling**: Custom CSS (no external UI framework for the core aesthetic).
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+-   Node.js (v20 or later recommended)
+-   npm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/yoonha-web.git
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd yoonha-web
+    ```
+3.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+### Development
+
+Start the development server:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Build the project for production:
+
+```bash
+npm run build
 ```
+
+The output will be in the `dist` directory.
+
+## 📦 Deployment
+
+This project is configured to deploy automatically to AWS S3 using GitHub Actions.
+
+### Workflow
+
+The workflow file is located at `.github/workflows/deploy.yml`. It triggers on every push to the `main` branch.
+
+### Configuration
+
+The following secrets must be configured in the GitHub repository:
+
+-   `AWS_ACCESS_KEY_ID`
+-   `AWS_SECRET_ACCESS_KEY`
+-   `AWS_REGION`
+-   `S3_BUCKET_NAME`
+
+## 📂 Project Structure
+
+-   `src/`: Source code including components and styles.
+    -   `components/`: Reusable UI components (Header, TitleBar, etc.).
+    -   `assets/`: Images and other assets imported in code.
+-   `public/`: Static assets (favicons, fonts, etc.) served directly.
