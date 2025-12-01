@@ -15,13 +15,13 @@ export const TitleBar: React.FC<TitleBarProps> = ({ title, onClose, onMinimize, 
       </div>
       <div className="title-bar-controls">
         <button aria-label="Minimize" onClick={onMinimize}>
-          <img src="/minimize.png" alt="Minimize" className="title-bar-icon" />
+          <img src="/icons/minimize.png" alt="Minimize" className="title-bar-icon" />
         </button>
         <button aria-label="Maximize" onClick={onMaximize}>
-          <img src="/maximize.png" alt="Maximize" className="title-bar-icon" />
+          <img src="/icons/maximize.png" alt="Maximize" className="title-bar-icon" />
         </button>
         <button aria-label="Close" onClick={onClose} className="close-btn">
-          <img src="/close.png" alt="Close" className="title-bar-icon" />
+          <img src="/icons/close.png" alt="Close" className="title-bar-icon" />
         </button>
       </div>
     </div>

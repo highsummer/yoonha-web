@@ -1,15 +1,15 @@
 @font-face {
   font-family: 'W95FA';
-  src: url('/w95font.woff2') format('woff2'),
-       url('/w95font.woff') format('woff');
+  src: url('/fonts/w95font.woff2') format('woff2'),
+       url('/fonts/w95font.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'W95FA';
-  src: url('/w95font-bold.woff2') format('woff2'),
-       url('/w95font-bold.woff') format('woff');
+  src: url('/fonts/w95font-bold.woff2') format('woff2'),
+       url('/fonts/w95font-bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
@@ -229,7 +229,7 @@ main {
 }
 
 .section.about {
-  background-image: url('/about_me_bg.png');
+  background-image: url('/assets/about-me-bg.png');
   background-size: cover;
   background-position: center;
 }

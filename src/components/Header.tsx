@@ -7,7 +7,7 @@ export const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="profile-header">
-        <img src="/portrait.png" alt="Portrait of Alex Doe" className="profile-initials" />
+        <img src="/assets/portrait.png" alt="Portrait of Yoonha Hwang" className="profile-initials" />
         <div className="profile-info">
           <h1>{profile.name}</h1>
           <p className="tagline">
@@ -27,7 +27,7 @@ export const Header: React.FC = () => {
       <div className="contact-info">
         {profile.email && (
           <a href={`mailto:${profile.email}`} className="contact-link">
-            <img src="/email.png" alt="Email" className="contact-icon" /> {profile.email}
+            <img src="/icons/email.png" alt="Email" className="contact-icon" /> {profile.email}
           </a>
         )}
         {profile.phone && (
@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
         )}
         {profile.github && (
           <a href={`https://${profile.github}`} target="_blank" rel="noopener noreferrer" className="contact-link">
-            <img src="/github.png" alt="GitHub" className="contact-icon" /> {profile.github}
+            <img src="/icons/github.png" alt="GitHub" className="contact-icon" /> {profile.github}
           </a>
         )}
         {profile.linkedin && (
@@ -47,7 +47,7 @@ export const Header: React.FC = () => {
         )}
         {profile.location && (
           <span className="contact-link">
-            <img src="/earth.png" alt="Location" className="contact-icon" /> {profile.location}
+            <img src="/icons/earth.png" alt="Location" className="contact-icon" /> {profile.location}
           </span>
         )}
       </div>
