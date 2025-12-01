@@ -1,0 +1,531 @@
+@font-face {
+  font-family: 'W95FA';
+  src: url('/w95font.woff2') format('woff2'),
+       url('/w95font.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'W95FA';
+  src: url('/w95font-bold.woff2') format('woff2'),
+       url('/w95font-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
+:root {
+  --bg-color: #008080; /* Classic Teal Desktop */
+  --win-gray: #c0c0c0;
+  --win-gray-light: #dfdfdf;
+  --win-gray-dark: #808080;
+  --win-black: #000000;
+  --win-white: #ffffff;
+  --win-blue: #000080;
+  --text-primary: #000000;
+  --text-secondary: #404040; /* Darker gray for secondary text */
+  --accent-color: #000080;
+  --border-width: 2px;
+  --font-main: 'W95FA', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  --font-display: 'Times New Roman', serif;
+  --max-width: 800px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.5;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+h1, h2, h3, h4, h5, .title-bar-text, .profile-initials {
+  font-family: var(--font-display);
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Window Container */
+.container {
+  max-width: var(--max-width);
+  width: 100%;
+  background-color: var(--win-gray);
+  padding: 2px; /* Space for the outer border */
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  /* Outset Border */
+  border-top: var(--border-width) solid var(--win-white);
+  border-left: var(--border-width) solid var(--win-white);
+  border-right: var(--border-width) solid var(--win-black);
+  border-bottom: var(--border-width) solid var(--win-black);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title Bar */
+.title-bar {
+  background: linear-gradient(90deg, var(--win-blue), #1084d0);
+  padding: 3px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.title-bar-text {
+  color: var(--win-white);
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.title-bar-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.title-bar-controls button {
+  width: 16px;
+  height: 14px;
+  background-color: var(--win-gray);
+  border-top: 1px solid var(--win-white);
+  border-left: 1px solid var(--win-white);
+  border-right: 1px solid var(--win-black);
+  border-bottom: 1px solid var(--win-black);
+  border-bottom: 1px solid var(--win-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.title-bar-icon {
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.title-bar-controls button:active {
+  border-top: 1px solid var(--win-black);
+  border-left: 1px solid var(--win-black);
+  border-right: 1px solid var(--win-white);
+  border-bottom: 1px solid var(--win-white);
+  padding-top: 1px;
+  padding-left: 1px;
+}
+
+.close-btn {
+  margin-left: 2px;
+}
+
+/* Window Body */
+main {
+  padding: 1rem;
+}
+
+/* Header Styles */
+.header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--win-gray-dark);
+  border-bottom-style: groove; /* Or use inset border trick */
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-initials {
+  width: 120px;
+  height: 120px;
+  background-color: var(--win-gray);
+  border: 2px solid;
+  border-color: var(--win-gray-dark) var(--win-white) var(--win-white) var(--win-gray-dark); /* Inset */
+  display: block; /* Changed from flex */
+  object-fit: cover; /* Ensure image covers the area */
+}
+
+.profile-info h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.profile-info h2 {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.tagline {
+  color: var(--text-secondary);
+}
+
+.mobile-break {
+  display: none;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.contact-icon {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
+}
+
+/* Section Styles */
+/* Section Styles */
+.section {
+  margin-bottom: 1rem;
+  border: 2px solid;
+  border-color: var(--win-gray-dark) var(--win-white) var(--win-white) var(--win-gray-dark); /* Inset for content area */
+  background-color: var(--win-white);
+  padding: 1rem;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.section.about {
+  background-image: url('/about_me_bg.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+.section.about p span {
+  background-color: var(--win-white);
+  padding: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: italic;
+  position: relative;
+  top: auto;
+  left: auto;
+  background-color: var(--win-white);
+  padding: 0 5px 0 0; /* Add slight padding right */
+  margin-bottom: 0.5rem;
+  border: none;
+  color: var(--win-blue);
+  display: inline-block;
+}
+
+/* Experience Styles */
+.experience-item {
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+  border-left: none;
+}
+
+.experience-item:last-child {
+  margin-bottom: 0;
+}
+.section-wrapper {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.section-content {
+  border: 2px solid;
+  border-color: var(--win-gray-dark) var(--win-white) var(--win-white) var(--win-gray-dark); /* Inset for content area */
+  background-color: var(--win-white);
+  padding: 1rem;
+  position: relative;
+}
+
+.section-title-outside {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--win-blue);
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+.exp-header {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.exp-header h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.company {
+  font-family: var(--font-display);
+  font-weight: normal;
+  color: var(--text-secondary);
+}
+
+.separator {
+  color: var(--text-secondary);
+  font-weight: bold;
+}
+
+.exp-header h4 .separator {
+  margin: 0 0.5rem;
+  font-weight: normal; /* Optional: make separator less heavy */
+}
+
+.date {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+.date::before {
+  content: "";
+  margin-right: 0;
+}
+
+.exp-details li {
+  margin-bottom: 0;
+  color: var(--text-primary);
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.exp-details li::before {
+  content: "▪";
+  position: absolute;
+  left: 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+/* Education Styles */
+.education-item {
+    margin-bottom: 1rem;
+}
+
+.edu-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+.education-item:last-child {
+    margin-bottom: 0;
+}
+.education-item h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Skills Styles */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-category h5 {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px dotted var(--text-secondary);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tags span {
+  background-color: var(--win-white);
+  color: var(--text-primary);
+  padding: 2px 6px;
+  border: 1px solid var(--win-black);
+  font-size: 0.85rem;
+  box-shadow: 1px 1px 0 var(--win-black); /* Simple drop shadow */
+}
+
+.tags span:active {
+    transform: translate(1px, 1px);
+    box-shadow: none;
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 2px solid;
+  border-color: var(--win-gray-dark) var(--win-white) var(--win-white) var(--win-gray-dark); /* Inset divider */
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+      padding: 0.5rem;
+      align-items: stretch;
+  }
+  .container {
+    max-width: 100%;
+    min-height: calc(100vh - 1rem);
+  }
+  
+  .section {
+      margin-top: 1.5rem;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .mobile-break {
+    display: inline;
+  }
+}
+
+/* News Styles */
+.news-item {
+  margin-bottom: 1rem;
+  border-bottom: 1px dotted var(--text-secondary);
+  padding-bottom: 0.5rem;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Publications Styles */
+.publications .section-content {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.publication-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dotted var(--text-secondary);
+}
+
+.publication-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pub-image-container {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  background-color: var(--win-gray);
+  border: 2px solid;
+  border-color: var(--win-gray-dark) var(--win-white) var(--win-white) var(--win-gray-dark); /* Inset */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pub-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pub-content {
+  flex: 1;
+}
+
+.pub-content h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.pub-meta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.venue {
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.pub-meta .date {
+  margin-left: 0;
+}
+
+@media (max-width: 600px) {
+  .publication-item {
+    flex-direction: column;
+  }
+  
+  .pub-image-container {
+    width: 100%;
+    height: 150px;
+  }
+}

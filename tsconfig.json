@@ -1,34 +1,7 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "jsx": "preserve",
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "lib": [
-      "es6",
-      "dom",
-      "es2019"
-    ],
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "sourceMap": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "strict": true
-  },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
   ]
 }
