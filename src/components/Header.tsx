@@ -40,11 +40,6 @@ export const Header: React.FC = () => {
             <img src="/icons/github.png" alt="GitHub" className="contact-icon" /> {profile.github}
           </a>
         )}
-        {profile.linkedin && (
-          <a href={`https://${profile.linkedin}`} target="_blank" rel="noopener noreferrer" className="contact-link">
-            <i className="fab fa-linkedin"></i> {profile.linkedin}
-          </a>
-        )}
         {profile.location && (
           <span className="contact-link">
             <img src="/icons/earth.png" alt="Location" className="contact-icon" /> {profile.location}

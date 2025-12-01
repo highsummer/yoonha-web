@@ -40,7 +40,7 @@ const App: React.FC = () => {
                 </div>
               )}
               <div className="pub-content">
-                <h4>{item.title}</h4>
+                <h4><a href={item.url} target="_blank" rel="noopener noreferrer">{item.title}</a></h4>
                 <div className="authors" style={{ marginBottom: '0.25rem', color: 'var(--text-secondary)' }}>
                   {item.authors && item.authors.map((author, index) => (
                     <React.Fragment key={index}>

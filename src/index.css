@@ -501,6 +501,15 @@ main {
   margin-bottom: 0.25rem;
 }
 
+.pub-content h4 a {
+  text-decoration: underline;
+  color: var(--text-primary);
+}
+
+.pub-content h4 a:hover {
+  text-decoration: none;
+}
+
 .pub-meta {
   display: flex;
   gap: 0.5rem;

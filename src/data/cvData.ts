@@ -29,6 +29,7 @@ export interface NewsItem {
 export interface Publication {
   id: string;
   title: string;
+  url: string;
   venue: string;
   date: string;
   imageUrl?: string;
@@ -42,8 +43,7 @@ export const cvData = {
     tagline: "From infrastructure to frontend, an enthusiastic all-rounder.",
     email: "yoonha.highsummer@gmail.com",
     phone: "",
-    github: "github.com/yoonha", // Assumed or need to find
-    linkedin: "", // Not found in text
+    github: "github.com/highsummer",
     location: "Pohang, Gyeongsangbuk-do, Republic of Korea",
     initials: "YH"
   },
@@ -64,6 +64,7 @@ export const cvData = {
       title: "Variable Shared Template for Consistent Non-rigid ICP",
       venue: "ACM Transactions on Graphics",
       date: "2025-08",
+      url: "https://dl.acm.org/doi/10.1145/3731428",
       imageUrl: "/pub/variable-shared-template.jpg",
       authors: ["Yucheol Jung", "Hyomin Kim", "Hyejeong Yoon", "Yoonha Hwang", "Seungyong Lee"]
     }
