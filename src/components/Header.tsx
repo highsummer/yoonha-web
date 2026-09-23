@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
         )}
         {profile.blog && (
           <a
-            href={`https://${profile.blog}`}
+            href={profile.blog}
             target="_blank"
             rel="noopener noreferrer"
             className="contact-link"
