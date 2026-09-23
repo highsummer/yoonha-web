@@ -24,6 +24,7 @@ export interface NewsItem {
   date: string;
   title: string;
   description: string;
+  link?: string;
 }
 
 export const cvData = {
@@ -40,6 +41,14 @@ export const cvData = {
   Proven track record in building teams, developing SaaS platforms, and optimizing data engineering pipelines. 
   Skilled in AWS, React, TypeScript, Python, and more.`,
   news: [
+    {
+      id: "2",
+      date: "2026-09",
+      title: "Visit my blog",
+      description:
+        "Check out my blog about my work and personal projects! (Only in Korean)",
+      link: "https://blog.highsummer.dev",
+    },
     {
       id: "1",
       date: "2026-07",

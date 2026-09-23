@@ -38,6 +38,11 @@ const App: React.FC = () => {
                 </span>
               </div>
               <p>{item.description}</p>
+              {item.link && (
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  {item.link}
+                </a>
+              )}
             </div>
           ))}
         </Section>
